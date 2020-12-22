@@ -4,6 +4,18 @@ public class Doctor extends Profession{
   private  int experience;
   private  boolean certification;
 
+    public Doctor() {
+        this.experience = 0;
+        this.certification = false;
+    }
+
+  public Doctor(String name, String surname, String education, String brtihday,
+                int experience, boolean certification) {
+    super(name,surname,education,brtihday);
+    this.experience = experience;
+    this.certification = certification;
+  }
+
     public void diagnosis(Client client) { }
     public void heal(Client client) { }
 

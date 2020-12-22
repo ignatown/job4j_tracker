@@ -6,6 +6,20 @@ public class Profession {
     private String education;
     private String brtihday;
 
+    public Profession() {
+        this.name = "default name";
+        this.surname = "default surname";
+        this.education = "default education";
+        this.brtihday = "default brtihday";
+    }
+
+    public Profession(String name, String surname, String education, String brtihday ) {
+        this.name = name;
+        this.surname = surname;
+        this.education = education;
+        this.brtihday = brtihday;
+    }
+
    public String getName() {
        return name;
    }
