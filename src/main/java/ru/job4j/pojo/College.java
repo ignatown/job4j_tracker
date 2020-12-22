@@ -8,5 +8,8 @@ public class College {
         student.setFullName("Ignatov Nikita Vitalievich");
         student.setStudyGroup("ER-14-18");
         student.setStartDate(new Date());
+        System.out.println(student.getFullName());
+        System.out.println(student.getStartDate());
+        System.out.println( student.getStudyGroup());
     }
 }
