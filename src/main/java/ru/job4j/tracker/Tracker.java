@@ -29,6 +29,23 @@ public class Tracker {
         return Arrays.copyOf(rls, size);
     }
 
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public boolean replace(int id, Item newItem){
+        if (indexOf(id) != -1)
+            items[indexOf(id)]=newItem;
+        return indexOf(id) != -1;
+    }
+
     public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
