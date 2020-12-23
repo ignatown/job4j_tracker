@@ -11,6 +11,23 @@ public class Tracker {
         return item;
     }
 
+    public Item[] findAll(Item[] item){
+        Item[] rls = new Item[size];
+        for (int i = 0; i < size; i++)
+            rls[i] = item[i];
+        return rls;
+    }
+
+    public Item findByName(String name){
+        Item rls = null;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].equals(name)) {
+                rls = items[i];
+            }
+        }
+        return rls;
+    }
+
     public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
