@@ -41,10 +41,13 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item newItem){
-       int fId = indexOf(id);
-        if (fId != -1)
-            items[fId]=newItem;
-        return fId != -1;
+        if (id >= 0) {
+            int fId = indexOf(id);
+            if (fId != -1)
+                items[fId] = newItem;
+            return fId != -1;
+        }
+        else return false;
     }
 
     public Item findById(int id) {
@@ -60,12 +63,15 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        int i = indexOf(id);
-        items[i] = null;
-        System.arraycopy(items, i+1, items, i, size-i);
-        items[size - 1] = null;
-        size--;
-        return true;
+       if (id >= 0) {
+           int i = indexOf(id);
+            items[i] = null;
+            System.arraycopy(items, i+1, items, i, size-i);
+            items[size - 1] = null;
+            size--;
+            return true;
+                     }
+       else return false;
     }
 
 
