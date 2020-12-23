@@ -41,9 +41,10 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item newItem){
-        if (indexOf(id) != -1)
-            items[indexOf(id)]=newItem;
-        return indexOf(id) != -1;
+       int fId = indexOf(id);
+        if (fId != -1)
+            items[fId]=newItem;
+        return fId != -1;
     }
 
     public Item findById(int id) {
