@@ -7,13 +7,17 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    public Item[] getItems() {
+        return items;
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
 
-    public Item[] findAll(Item[] item){
+    public Item[] findAll(){
         return Arrays.copyOf(items, size);
     }
 
@@ -64,7 +68,7 @@ public class Tracker {
 
     public boolean delete(int id) {
         int i = indexOf(id);
-       if (i != 0) {
+       if (i != -1) {
             items[i] = null;
             System.arraycopy(items, i+1, items, i, size-i);
             items[size - 1] = null;
