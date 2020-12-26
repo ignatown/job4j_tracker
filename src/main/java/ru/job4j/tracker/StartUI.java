@@ -17,13 +17,6 @@ public class StartUI {
                     String name = scanner.nextLine();
                     Item item = new Item(name);
                     tracker.add(item);
-                    if (select == 1) {
-                        System.out.println("=== Show all items ====");
-                        Item[] newItem = tracker.findAll();
-                        for (int i = 0; i < newItem.length; i++) {
-                            System.out.println(newItem);
-                        }
-                    }
             case 1:
              System.out.println("=== Show all items ====");
                 Item[] newItem = tracker.findAll();
@@ -37,7 +30,6 @@ public class StartUI {
                 System.out.print("New name: ");
                 name = scanner.nextLine();
                 Item replItem = new Item(name);
-                tracker.replace(id, replItem);
                 if (tracker.replace(id, replItem)) {
                     System.out.println("Операция проведена успешно.");
                 } else {
@@ -48,7 +40,6 @@ public class StartUI {
                 System.out.println("=== Delete item ====");
                 System.out.print("ID to delete: ");
                 id = Integer.valueOf(scanner.nextLine());
-                tracker.delete(id);
                 if (tracker.delete(id)) {
                     System.out.println("Операция проведена успешно.");
                 } else {
