@@ -7,7 +7,7 @@ public class Item {
     private int id =1;
     private String name = "default";
 
-    LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
     }
