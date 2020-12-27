@@ -13,8 +13,9 @@ public class StartUI {
     public static void showAll(Input input, Tracker tracker) {
         System.out.println("=== Show all items ====");
         Item[] newItem = tracker.findAll();
-        for (int i = 0; i < newItem.length; i++)
+        for (int i = 0; i < newItem.length; i++) {
             System.out.println(newItem[i]);
+        }
     }
 
     public static void editItem(Input input, Tracker tracker) {
@@ -62,7 +63,9 @@ public class StartUI {
                 System.out.println(findNames[i]);
             }
         }
-        else System.out.println("Заявки с таким именем не найдены");
+        else {
+            System.out.println("Заявки с таким именем не найдены");
+        }
     }
 
     public void init(Input input, Tracker tracker) {
