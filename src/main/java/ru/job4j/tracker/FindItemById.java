@@ -17,7 +17,7 @@ public class FindItemById implements UserAction{
         Item findItem = new Item();
         findItem = tracker.findById(id);
         if (findItem != null) {
-            findItem.toString();
+            out.println(findItem);
         }
         else {
             out.println("Не найдено элемента с таким ID.");
