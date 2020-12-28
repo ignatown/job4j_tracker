@@ -31,11 +31,11 @@ public class StartUI {
         UserAction[] actions = {
                 new CreateAction(output),
                 new Exit(),
-                new FindByItem(),
-                new FindItemById(),
-                new DeleteItem(),
-                new ShowAll(),
-                new EditItem(),
+                new FindByItem(output),
+                new FindItemById(output),
+                new DeleteItem(output),
+                new ShowAll(output),
+                new EditItem(output),
         };
         new StartUI(output).init(input, tracker, actions);
     }
