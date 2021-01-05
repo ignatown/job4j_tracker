@@ -19,5 +19,4 @@ public class EagerLoadingTrackerSingle {
     public static void main(String[] args) {
         EagerLoadingTrackerSingle tracker = EagerLoadingTrackerSingle.getInstance();
     }
-
 }

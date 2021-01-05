@@ -18,5 +18,4 @@ public class LazyLoadingTrackerSingle {
     public Item add(Item model) {
         return model;
     }
-
 }
