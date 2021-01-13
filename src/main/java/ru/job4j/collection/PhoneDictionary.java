@@ -1,4 +1,4 @@
-package ru.job4j.search;
+package ru.job4j.collection;
 
 import java.util.ArrayList;
 
@@ -13,14 +13,8 @@ public class PhoneDictionary {
         ArrayList<Person> fnd = new ArrayList<Person>();
         for (Person value:
                 persons) {
-            if (value.getName().contains(key)) {
-                fnd.add(value);
-            } else if (value.getSurname().contains(key)) {
-                fnd.add(value);
-            }
-            else if (value.getPhone().contains(key)) {
-                fnd.add(value);
-            } else if (value.getAddress().contains(key)) {
+            if (value.getName().contains(key) || value.getSurname().contains(key) ||
+                    value.getPhone().contains(key) || value.getAddress().contains(key)) {
                 fnd.add(value);
             }
         }
