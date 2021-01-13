@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
@@ -13,9 +16,8 @@ public class StartUITest {
                 new String[] { "1","0" }
         );
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new Exit()
-        };
+        ArrayList<UserAction> actions = new ArrayList<UserAction>();
+        actions.add(new Exit());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 String.format(
