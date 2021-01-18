@@ -14,8 +14,8 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         if (findByPassport(passport) != null) {
-            if (users.get(passport).contains(account)) {
-                users.get(passport).add(account);
+            if (users.get(findByPassport(passport)).contains(account)) {
+                users.get(findByPassport(passport)).add(account);
             }
         }
     }
@@ -33,8 +33,8 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         if (findByPassport(passport) != null) {
             for (Account acc:
-             users.get(passport)) {
-                if (acc.getRequisite() == requisite) {
+             users.get(findByPassport(passport))) {
+                if (acc.getRequisite().equals(requisite)) {
                     return acc;
                 }
             }
@@ -44,11 +44,11 @@ public class BankService {
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
-            if  (findByRequisite(srcPassport, srcRequisite) != null &&
-                findByRequisite(destPassport, destRequisite) != null &&
-                findByRequisite(srcPassport, srcRequisite).getBalance() >= amount) {
-            findByRequisite(srcPassport, srcRequisite).setBalance(findByRequisite(srcPassport, srcRequisite).getBalance() - amount);
-            findByRequisite(destPassport, destRequisite).setBalance(findByRequisite(destPassport, destRequisite).getBalance() + amount);
+       Account srcAcc = findByRequisite(srcPassport, srcRequisite);
+       Account destAcc = findByRequisite(destPassport, destRequisite);
+            if  (srcAcc != null && destAcc != null && srcAcc.getBalance() >= amount) {
+            srcAcc.setBalance(srcAcc.getBalance() - amount);
+            destAcc.setBalance(destAcc.getBalance() + amount);
             return true;
             }
             return false;
