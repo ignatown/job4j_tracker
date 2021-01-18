@@ -22,8 +22,8 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        for (User us:
-             users.keySet()) {
+        for (User us
+                : users.keySet()) {
             if (us.getPassport().equals(passport)) {
                 return us;
             }
@@ -33,8 +33,8 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         if (findByPassport(passport) != null) {
-            for (Account acc:
-             users.get(findByPassport(passport))) {
+            for (Account acc
+                    : users.get(findByPassport(passport))) {
                 if (acc.getRequisite().equals(requisite)) {
                     return acc;
                 }

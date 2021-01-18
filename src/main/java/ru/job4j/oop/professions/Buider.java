@@ -14,10 +14,8 @@ public class Buider extends Engineer{
         this.buildingSpecification = buildingSpecification;
     }
 
-
     public void layBricks(Client client) {};
     public void dismantling(Client client) {};
-
     public boolean getCanWorkAtHeight() {
         return canWorkAtHeight;
     }

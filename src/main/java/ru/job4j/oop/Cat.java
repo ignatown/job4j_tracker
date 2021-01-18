@@ -5,11 +5,11 @@ public class Cat {
     private String food;
     private String name;
 
-    public void show(){
+    public void show() {
         System.out.println(this.food);
     }
 
-    public void giveName(String nick){
+    public void giveName(String nick) {
         this.name = nick;
     }
 
@@ -21,12 +21,12 @@ public class Cat {
         Cat gav = new Cat();
         gav.eat("kotleta");
         gav.giveName("Gav");
-        System.out.println("There are "+ gav.name +"'s food:");
+        System.out.println("There are " + gav.name + "'s food:");
         gav.show();
         Cat black = new Cat();
         black.eat("fish");
         black.giveName("Black");
-        System.out.println("There are "+ black.name +"'s food:");
+        System.out.println("There are " + black.name + "'s food:");
         black.show();
     }
 }

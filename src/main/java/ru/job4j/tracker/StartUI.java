@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class StartUI {
     private final Output out;
     private ArrayList<UserAction> actions = new ArrayList<UserAction>();
+
     public StartUI(Output out) {
         this.out = out;
     }
@@ -25,7 +26,7 @@ public class StartUI {
         }
     }
 
-    private void showMenu( ArrayList<UserAction> actions) {
+    private void showMenu(ArrayList<UserAction> actions) {
         out.println("Menu.");
         for (int index = 0; index < actions.size(); index++) {
             out.println(index + ". " + actions.get(index).name());

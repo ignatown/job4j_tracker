@@ -16,12 +16,11 @@ public class FindEl {
     }
 
     public static void main(String[] args) {
-        String[] str = {"A","B","C","D"};
+        String[] str = {"A", "B", "C", "D"};
         String key = "C";
 
         try {
-            System.out.println(indexOf(str,key));
-        }
+            System.out.println(indexOf(str,key)); }
         catch (ElementNotFoundException e) {
             e.printStackTrace();
         }

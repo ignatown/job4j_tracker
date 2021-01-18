@@ -7,8 +7,7 @@ public class Jukebox {
             System.out.println("May people run clumsily through puddles");
             System.out.println("May the water flow like a river down the street,");
             System.out.println("And may people passing by not understand why");
-            System.out.println("I am so happy on this sad day. \n");
-        }
+            System.out.println("I am so happy on this sad day. \n"); }
         else {
             if (position == 2) {
                 System.out.println("After The day we are very tired,");
@@ -17,8 +16,7 @@ public class Jukebox {
 
             }
             else {
-                System.out.println("song not found\n");
-            }
+                System.out.println("song not found\n"); }
         }
     }
 

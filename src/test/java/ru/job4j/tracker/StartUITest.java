@@ -13,7 +13,7 @@ public class StartUITest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] { "1","0" }
+                new String[] {"1", "0" }
         );
         Tracker tracker = new Tracker();
         ArrayList<UserAction> actions = new ArrayList<UserAction>();

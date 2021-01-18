@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.ArrayList;
 
-public class ShowAll implements UserAction{
+public class ShowAll implements UserAction {
     private final Output out;
 
     public ShowAll(Output out) {

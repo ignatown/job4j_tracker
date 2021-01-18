@@ -1,6 +1,6 @@
 package ru.job4j.oop.professions;
 
-public class Programmer extends Engineer{
+public class Programmer extends Engineer {
     private int commercialExperience;
     private boolean knowledgeOfEnglish;
     private String programmingLanguage;

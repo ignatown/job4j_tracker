@@ -22,6 +22,7 @@ public class ConvertMatrix2ListTest {
         List<Integer> result = list.toList(input);
         assertThat(result, is(expect));
     }
+
     @Test
     public void when4on4ArrayThenList16() {
         ConvertMatrix2List list = new ConvertMatrix2List();

@@ -8,7 +8,6 @@ public class FactRec {
         return calc(n - 1) * n;
     }
 
-
     public static void main(String[] args) {
         int rsl = calc(3);
         System.out.println(rsl);

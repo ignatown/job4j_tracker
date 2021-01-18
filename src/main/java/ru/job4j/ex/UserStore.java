@@ -3,7 +3,7 @@ package ru.job4j.ex;
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        int rls=-1;
+        int rls = -1;
         for (int i = 0; i < users.length; i++) {
             if (users[i].getUsername().equals(login))  {
               rls = i;
@@ -31,8 +31,7 @@ public class UserStore {
         try {
             if (validate(user)) {
                 System.out.println("This User has an access");
-            }
-        }
+            } }
         catch (UserNotFoundException ua) {
             System.out.println("User is not found");
             ua.printStackTrace();

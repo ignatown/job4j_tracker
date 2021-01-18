@@ -36,6 +36,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(1));
     }
+
     @Test
     public void whenComporatorDeskByPriority() {
         Comparator<Job> cmp = new JobDescByPriority();

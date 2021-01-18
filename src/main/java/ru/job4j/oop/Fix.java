@@ -1,14 +1,14 @@
 package ru.job4j.oop;
 
-public class fix {
+public class Fix {
     private String desc;
 
-    public fix(String text) {
+    public Fix(String text) {
         desc = text;
     }
 
     public static void main(String[] args) {
         String issue = "Fixed.";
-        fix item = new fix(issue);
+        Fix item = new Fix(issue);
     }
 }

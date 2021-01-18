@@ -10,6 +10,6 @@ public class College {
         student.setStartDate(new Date());
         System.out.println(student.getFullName());
         System.out.println(student.getStartDate());
-        System.out.println( student.getStudyGroup());
+        System.out.println(student.getStudyGroup());
     }
 }

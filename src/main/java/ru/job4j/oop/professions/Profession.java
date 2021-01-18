@@ -13,7 +13,7 @@ public class Profession {
         this.brtihday = "default brtihday";
     }
 
-    public Profession(String name, String surname, String education, String brtihday ) {
+    public Profession(String name, String surname, String education, String brtihday) {
         this.name = name;
         this.surname = surname;
         this.education = education;

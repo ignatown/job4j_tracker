@@ -12,7 +12,8 @@ public class Library {
         books[2] = bk2;
         books[3] = bk3;
         for (int i = 0; i < books.length; i++) {
-            System.out.println("Book №"+i+" : "+books[i].getName()+" has " +books[i].getNumberOfPages()+" pages.");
+            System.out.println("Book №" + i + " : "+books[i].getName() + " has "
+                    + books[i].getNumberOfPages() + " pages.");
         }
 
         System.out.println("..rearranging books..");
@@ -23,8 +24,8 @@ public class Library {
 
         for (int i = 0; i < books.length; i++) {
             if (books[i].getName().equals("Clean Code")) {
-                System.out.println("Book \""+books[i].getName()+"\" has number: "+i+" and "
-                        +books[i].getNumberOfPages()+" pages");
+                System.out.println("Book \"" + books[i].getName() + "\" has number: " + i + " and "
+                        + books[i].getNumberOfPages() + " pages");
             }
         }
 

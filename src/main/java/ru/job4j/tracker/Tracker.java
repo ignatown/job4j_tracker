@@ -18,11 +18,11 @@ public class Tracker {
 
     }
 
-    public ArrayList<Item> findAll(){
+    public ArrayList<Item> findAll() {
         return items;
     }
 
-    public ArrayList<Item> findByName(String name){
+    public ArrayList<Item> findByName(String name) {
         ArrayList<Item> rls = new ArrayList<Item>();
         int size = 0;
         for (int i = 0; i < this.size; i++) {
@@ -45,14 +45,14 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean replace(int id, Item newItem){
+    public boolean replace(int id, Item newItem) {
             int i = indexOf(id);
             if (i != -1) {
-                items.set(i,newItem);
+                items.set(i, newItem);
                 newItem.setId(id);
                 return true;
             }
-            else return false;
+            else {return false;}
     }
 
     public Item findById(int id) {
@@ -66,7 +66,6 @@ public class Tracker {
         }
         return rsl;
     }
-
     public boolean delete(int id) {
         int i = indexOf(id);
        if (i != -1) {

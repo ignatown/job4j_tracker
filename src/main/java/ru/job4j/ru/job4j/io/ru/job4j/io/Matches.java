@@ -6,7 +6,7 @@ public class Matches {
     public static void possibleMove(int match, int minus, int nextPlayer) {
         if ((minus <= 0 || minus >= 4) || match - minus < 0) {
             System.out.println("Недопустимое количество спичек. "
-                    + System.lineSeparator() + "Ход переходит игроку №"+ nextPlayer+".");
+                    + System.lineSeparator() + "Ход переходит игроку №" + nextPlayer + ".");
             minus = 0;
         }
     }
@@ -15,7 +15,7 @@ public class Matches {
     }
     public static void nextMove(int nextPlayer, int actualPlayer, int match, int minus) {
         do {
-            System.out.println("Ходит игрок № "+actualPlayer+"! Сколько берем спичек? (от 1 до 3)");
+            System.out.println("Ходит игрок № " + actualPlayer + "! Сколько берем спичек? (от 1 до 3)");
             Scanner input = new Scanner(System.in);
             minus = Integer.valueOf(input.nextLine());
             possibleMove(match,minus,nextPlayer);
@@ -30,7 +30,7 @@ public class Matches {
         System.out.println("Игра \"11\"!");
         match = 11;
         winnerFound = 0;
-        int minus=0;
+        int minus = 0;
         while (match > 0 && winnerFound == 0) {
             System.out.println("Оставшихся спичек: " + match);
             nextMove(2, 1, match, minus);

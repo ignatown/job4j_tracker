@@ -1,6 +1,6 @@
 package ru.job4j.oop.professions;
 
-public class Engineer extends Profession{
+public class Engineer extends Profession {
     private boolean practitioner;
     private boolean electricalSafety;
 
@@ -11,7 +11,7 @@ public class Engineer extends Profession{
 
     public Engineer(String name, String surname, String education, String brtihday,
                     boolean practitioner, boolean electricalSafety) {
-        super(name,surname,education,brtihday);
+        super(name, surname, education, brtihday);
             this.practitioner = practitioner;
             this.electricalSafety = electricalSafety;
     }

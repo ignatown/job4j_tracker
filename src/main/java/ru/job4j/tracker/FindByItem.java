@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.ArrayList;
 
-public class FindByItem implements UserAction{
+public class FindByItem implements UserAction {
     private final Output out;
 
     public FindByItem(Output out) {
