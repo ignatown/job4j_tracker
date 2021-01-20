@@ -2,6 +2,8 @@ package ru.job4j.collection;
 
 import org.junit.Test;
 import java.util.Comparator;
+
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.assertThat;
 
@@ -72,8 +74,8 @@ public class JobTest {
         Comparator<Job> cmp = new JobAskByName().thenComparing(new JobAskByPriority());
         int rsl = cmp.compare(
                 new Job("A", 1),
-                new Job("B", 0)
+                new Job("A", 0)
         );
-        assertThat(rsl, lessThan(1));
+        assertThat(rsl, greaterThan(0));
     }
 }
