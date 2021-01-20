@@ -6,15 +6,15 @@ public class Engineer extends Profession {
 
     public Engineer(String name, String surname, String education,
                     boolean practitioner, boolean electricalSafety) {
+        super(name, surname, education);
         this.practitioner = false;
         this.electricalSafety = false;
     }
 
     public Engineer(String name, String surname, String education,
                     boolean practitioner) {
-        super(name, surname, education, brtihday);
+        super(name, surname, education);
             this.practitioner = practitioner;
-            this.electricalSafety = electricalSafety;
     }
 
     public void preparationOfTechnicalSpecifications(Client client) {

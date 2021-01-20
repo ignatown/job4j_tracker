@@ -6,7 +6,7 @@ public class Profession {
     private String education;
     private String brtihday;
 
-    public Profession() {
+    public Profession(String name, String surname, String education) {
         this.name = "default name";
         this.surname = "default surname";
         this.education = "default education";

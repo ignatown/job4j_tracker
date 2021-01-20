@@ -6,6 +6,7 @@ public class Doctor extends Profession {
 
     public Doctor(String name, String surname, String education,
                   int experience, boolean certification) {
+        super(name, surname, education);
         this.experience = 0;
         this.certification = false;
     }
