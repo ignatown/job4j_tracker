@@ -51,8 +51,9 @@ public class Tracker {
                 items.set(i, newItem);
                 newItem.setId(id);
                 return true;
+            } else {
+                return false;
             }
-            else {return false;}
     }
 
     public Item findById(int id) {
@@ -66,14 +67,14 @@ public class Tracker {
         }
         return rsl;
     }
+
     public boolean delete(int id) {
         int i = indexOf(id);
        if (i != -1) {
             items.remove(i);
             return true;
-                     }
-       else return false;
+       } else {
+           return false;
+       }
     }
-
-
 }

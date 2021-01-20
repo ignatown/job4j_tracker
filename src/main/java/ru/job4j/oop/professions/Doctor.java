@@ -4,7 +4,8 @@ public class Doctor extends Profession {
   private  int experience;
   private  boolean certification;
 
-    public Doctor() {
+    public Doctor(String name, String surname, String education,
+                  int experience, boolean certification) {
         this.experience = 0;
         this.certification = false;
     }
@@ -17,6 +18,7 @@ public class Doctor extends Profession {
   }
 
     public void diagnosis(Client client) { }
+
     public void heal(Client client) { }
 
     public int getExperience() {

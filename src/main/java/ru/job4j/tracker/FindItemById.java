@@ -19,8 +19,7 @@ public class FindItemById implements UserAction {
         findItem = tracker.findById(id);
         if (findItem != null) {
             out.println(findItem);
-        }
-        else {
+        } else {
             out.println("Не найдено элемента с таким ID.");
         }
         return true;

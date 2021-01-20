@@ -12,7 +12,7 @@ public class Library {
         books[2] = bk2;
         books[3] = bk3;
         for (int i = 0; i < books.length; i++) {
-            System.out.println("Book №" + i + " : "+books[i].getName() + " has "
+            System.out.println("Book №" + i + " : " + books[i].getName() + " has "
                     + books[i].getNumberOfPages() + " pages.");
         }
 

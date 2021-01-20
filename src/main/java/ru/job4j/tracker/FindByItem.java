@@ -22,8 +22,7 @@ public class FindByItem implements UserAction {
             for (int i = 0; i < findNames.size(); i++) {
                 out.println(findNames.get(i));
             }
-        }
-        else {
+        } else {
             out.println("Заявки с таким именем не найдены");
         }
         return true;

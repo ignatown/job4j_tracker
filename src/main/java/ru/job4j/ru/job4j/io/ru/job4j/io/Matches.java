@@ -10,17 +10,20 @@ public class Matches {
             minus = 0;
         }
     }
+
     public static boolean victoryCheck(int match, int minus) {
         return (minus < 0 && minus > 4 && match - minus > -1);
     }
+
     public static void nextMove(int nextPlayer, int actualPlayer, int match, int minus) {
         do {
-            System.out.println("Ходит игрок № " + actualPlayer + "! Сколько берем спичек? (от 1 до 3)");
+            System.out.println("Ходит игрок № " + actualPlayer
+                    + "! Сколько берем спичек? (от 1 до 3)");
             Scanner input = new Scanner(System.in);
             minus = Integer.valueOf(input.nextLine());
-            possibleMove(match,minus,nextPlayer);
+            possibleMove(match, minus, nextPlayer);
         }
-        while (victoryCheck(match,minus));
+        while (victoryCheck(match, minus));
     }
 
     public static void main(String[] args) {
