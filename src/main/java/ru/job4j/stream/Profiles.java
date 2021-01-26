@@ -8,6 +8,8 @@ public class Profiles {
         return profiles
                 .stream()
                 .map(profile -> profile.getAddress())
+                .sorted()
+                .distinct()
                 .collect(Collectors.toList());
     }
 }
