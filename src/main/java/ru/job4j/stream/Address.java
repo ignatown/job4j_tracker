@@ -8,7 +8,7 @@ public class Address implements Comparable<String>{
     private int home;
     private int apartment;
 
-    Address(String city,String street, int home, int apartment){
+  public Address(String city,String street, int home, int apartment){
     this.city = city;
     this.street = street;
     this.home = home;
