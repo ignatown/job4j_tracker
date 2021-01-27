@@ -24,7 +24,7 @@ public class BankService {
      * @param user пользователь, который добавляется в системую
      */
     public void addUser(User user) {
-    users.putIfAbsent(user, new ArrayList<Account>());
+    users.putIfAbsent(user, new ArrayList<>());
     }
 
     /**
