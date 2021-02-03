@@ -13,7 +13,7 @@ public class IntFilter {
         ints.add(-2);
         ints.add(1);
        List<Integer> fltInt = ints.stream().filter(
-                i -> i>=0
+                i -> i >= 0
         ).collect(Collectors.toList());
         fltInt.forEach(System.out::println);
     }

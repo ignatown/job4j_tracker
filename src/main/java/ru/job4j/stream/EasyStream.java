@@ -9,15 +9,12 @@ import java.util.stream.Collectors;
 public class EasyStream {
     private List<Integer> ints = new ArrayList<>();
 
-
-
     public static EasyStream of(List<Integer> source) {
     if (source == null) {
         throw new UnsupportedOperationException();
     }
         EasyStream rsl = new EasyStream();
-        for (Integer i:
-             source) {
+        for (Integer i: source) {
             rsl.ints.add(i);
         }
         return rsl;
@@ -28,8 +25,7 @@ public class EasyStream {
             throw new UnsupportedOperationException();
         }
         EasyStream rsl = new EasyStream();
-        for (Integer i:
-             ints) {
+        for (Integer i: ints) {
            rsl.ints.add(fun.apply(i));
         }
         return rsl;
@@ -40,8 +36,7 @@ public class EasyStream {
             throw new UnsupportedOperationException();
         }
         EasyStream rsl = new EasyStream();
-        for (Integer i:
-             ints) {
+        for (Integer i: ints) {
             if (fun.test(i)) {
                 rsl.ints.add(i);
             }

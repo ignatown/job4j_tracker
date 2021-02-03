@@ -18,22 +18,27 @@ public class City {
             this.cityName = cityName;
             return this;
         }
+
         Builder buildMayorName(String mayorName) {
             this.mayorName = mayorName;
             return this;
         }
+
         Builder buildNationLiving(String nationLiving) {
             this.nationLiving = nationLiving;
             return this;
         }
+
         Builder buildDistrict(String district) {
             this.district = district;
             return this;
         }
+
         Builder buildYearOfFoundation(int yearOfFoundation) {
             this.yearOfFoundation = yearOfFoundation;
             return this;
         }
+
         public  City build() {
             City city = new City();
             city.cityName = cityName;
@@ -43,18 +48,14 @@ public class City {
             city.yearOfFoundation = yearOfFoundation;
             return city;
         }
-
     }
 
     @Override
     public String toString() {
-        return "City{" +
-                "cityName='" + cityName + '\'' +
-                ", mayorName='" + mayorName + '\'' +
-                ", nationLiving='" + nationLiving + '\'' +
-                ", district='" + district + '\'' +
-                ", yearOfFoundation=" + yearOfFoundation +
-                '}';
+        return "City{" + "cityName='" + cityName + '\'' + ", mayorName='"
+                + mayorName + '\'' + ", nationLiving='" + nationLiving + '\''
+                + ", district='" + district + '\'' + ", yearOfFoundation="
+                + yearOfFoundation + '}';
     }
 
     public static void main(String[] args) {

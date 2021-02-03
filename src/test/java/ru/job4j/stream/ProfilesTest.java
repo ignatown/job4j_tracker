@@ -25,4 +25,5 @@ public class ProfilesTest {
                 Profiles.collect(list),
                 is(address)
         );
-    }}
+    }
+}

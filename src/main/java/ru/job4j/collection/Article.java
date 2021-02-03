@@ -10,8 +10,8 @@ public class Article {
         Set<String> setOrigin = new HashSet<String>(Arrays.asList(arrOrigin));
         String[] arrLine = line.split(" |, ");
         Set<String> setLine = new HashSet<String>(Arrays.asList(arrLine));
-        for (String s:
-             setLine) {
+        for (String s
+                :setLine) {
            if (!setOrigin.contains(s)) {
                return false;
            }
@@ -20,6 +20,6 @@ public class Article {
     }
 
     public static void main(String[] args) {
-        generateBy("aaa aaa aaa, aa a"," ");
+        generateBy("aaa aaa aaa, aa a", " ");
     }
 }
