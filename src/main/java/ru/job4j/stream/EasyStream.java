@@ -10,9 +10,6 @@ public class EasyStream {
     private List<Integer> ints = new ArrayList<>();
 
     public static EasyStream of(List<Integer> source) {
-    if (source == null) {
-        throw new UnsupportedOperationException();
-    }
         EasyStream rsl = new EasyStream();
         for (Integer i: source) {
             rsl.ints.add(i);
@@ -21,9 +18,6 @@ public class EasyStream {
     }
 
     public EasyStream map(Function<Integer, Integer> fun) {
-        if (fun == null) {
-            throw new UnsupportedOperationException();
-        }
         EasyStream rsl = new EasyStream();
         for (Integer i: ints) {
            rsl.ints.add(fun.apply(i));
@@ -32,9 +26,6 @@ public class EasyStream {
     }
 
     public EasyStream filter(Predicate<Integer> fun) {
-        if (fun == null) {
-            throw new UnsupportedOperationException();
-        }
         EasyStream rsl = new EasyStream();
         for (Integer i: ints) {
             if (fun.test(i)) {
