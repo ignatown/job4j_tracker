@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class BankServiceTest {
 
-    @Test
+/*    @Test
     public void addUser() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
@@ -24,7 +24,7 @@ public class BankServiceTest {
         assertNull(bank.findByRequisite("34", "5546"));
     }
 
-    /*@Test
+    @Test
     public void addAccount() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
