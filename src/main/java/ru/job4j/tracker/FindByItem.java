@@ -15,9 +15,9 @@ public class FindByItem implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, MemTracker memTracker) {
         String findName = input.askStr("Name to find: ");
-        ArrayList<Item> findNames = tracker.findByName(findName);
+        ArrayList<Item> findNames = memTracker.findByName(findName);
         if (findNames.size() > 0) {
             for (int i = 0; i < findNames.size(); i++) {
                 out.println(findNames.get(i));

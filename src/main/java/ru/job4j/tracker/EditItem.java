@@ -13,11 +13,11 @@ public class EditItem implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, MemTracker memTracker) {
         int id = input.askInt("ID to replace: ");
         String name = input.askStr("New name: ");
         Item replItem = new Item(name);
-        if (tracker.replace(id, replItem)) {
+        if (memTracker.replace(id, replItem)) {
             out.println("Операция проведена успешно.");
         } else {
             out.println("Произошла ошибка");

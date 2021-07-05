@@ -4,29 +4,29 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsNull.nullValue;
-import java.util.Collections;
+
 import java.util.Comparator;
 
-public class TrackerTest {
+public class MemTrackerTest {
     @Test
     public void whenIncrease() {
-        Tracker tracker = new Tracker();
-        tracker.add(new Item("A"));
-        tracker.add(new Item("C"));
-        tracker.add(new Item("D"));
-        tracker.add(new Item("B"));
+        MemTracker memTracker = new MemTracker();
+        memTracker.add(new Item("A"));
+        memTracker.add(new Item("C"));
+        memTracker.add(new Item("D"));
+        memTracker.add(new Item("B"));
         Comparator<Item> comparator = new SortByAscending();
-        tracker.findAll().sort(comparator);
+        memTracker.findAll().sort(comparator);
     }
 
     @Test
     public void whenDelete() {
-        Tracker tracker = new Tracker();
+        MemTracker memTracker = new MemTracker();
         Item bug = new Item();
         bug.setName("Bug");
-        tracker.add(bug);
+        memTracker.add(bug);
         int id = bug.getId();
-        tracker.delete(id);
-        assertThat(tracker.findById(id), is(nullValue()));
+        memTracker.delete(id);
+        assertThat(memTracker.findById(id), is(nullValue()));
     }
 }

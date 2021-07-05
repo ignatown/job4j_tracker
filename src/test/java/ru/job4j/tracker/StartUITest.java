@@ -15,10 +15,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"1", "0" }
         );
-        Tracker tracker = new Tracker();
+        MemTracker memTracker = new MemTracker();
         ArrayList<UserAction> actions = new ArrayList<UserAction>();
         actions.add(new Exit());
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, memTracker, actions);
         assertThat(out.toString(), is(
                 String.format(
                         "Menu.%n"
