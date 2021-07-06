@@ -6,9 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class SqlTracker implements Store {
+public class SqlTracker implements Store, AutoCloseable {
 
     private Connection cn;
+
+    public SqlTracker(Connection connection) {
+        this.cn = connection;
+    }
 
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
@@ -35,14 +39,17 @@ public class SqlTracker implements Store {
     @Override
     public Item add(Item item) throws SQLException {
         try (PreparedStatement statement =
-                     cn.prepareStatement("insert into items(name) values (?)")) {
+                     cn.prepareStatement("insert into items(name) values (?)",
+                             Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, item.getName());
             statement.execute();
-            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    item.setId(generatedKeys.getInt(1));
+            try (ResultSet generatedKey = statement.getGeneratedKeys()) {
+                if (generatedKey.next()) {
+                    item.setId(generatedKey.getInt(1));
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return item;
     }
