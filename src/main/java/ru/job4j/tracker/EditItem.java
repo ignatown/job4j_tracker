@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLException;
+
 public class EditItem implements UserAction {
     private final Output out;
 
@@ -13,7 +15,7 @@ public class EditItem implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store memTracker) throws SQLException {
         int id = input.askInt("ID to replace: ");
         String name = input.askStr("New name: ");
         Item replItem = new Item(name);

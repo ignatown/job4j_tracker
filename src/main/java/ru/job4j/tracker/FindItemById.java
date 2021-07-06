@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLException;
+
 public class FindItemById implements UserAction {
     private final Output out;
 
@@ -13,7 +15,7 @@ public class FindItemById implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store memTracker) throws SQLException {
         int id = Integer.valueOf(input.askStr("ID to found: "));
         Item findItem = new Item();
         findItem = memTracker.findById(id);

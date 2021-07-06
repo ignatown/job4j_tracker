@@ -107,23 +107,20 @@ public class SqlTracker implements Store {
 
     @Override
     public Item findById(int id) throws SQLException {
-        List<Item> rsl = new ArrayList<>();
+        Item rsl = null;
         try (PreparedStatement statement =
                      cn.prepareStatement("select * from items where id = ?")) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    rsl.add(new Item(
+                if (resultSet.next()) {
+                    rsl = (new Item(
                             resultSet.getInt("id"),
                             resultSet.getString("name")
                     ));
                 }
+                return rsl;
             }
         }
-        if (rsl.size() > 0) {
-           return rsl.get(0);
-        } else {
-            return null;
-        }
+
     }
 }

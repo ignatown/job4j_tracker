@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FindByItem implements UserAction {
     private final Output out;
@@ -15,9 +17,9 @@ public class FindByItem implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store memTracker) throws SQLException {
         String findName = input.askStr("Name to find: ");
-        ArrayList<Item> findNames = memTracker.findByName(findName);
+        List<Item> findNames = memTracker.findByName(findName);
         if (findNames.size() > 0) {
             for (int i = 0; i < findNames.size(); i++) {
                 out.println(findNames.get(i));

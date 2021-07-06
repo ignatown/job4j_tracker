@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLException;
+
 public class Exit implements UserAction {
     @Override
     public String name() {
@@ -7,7 +9,7 @@ public class Exit implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store memTracker) throws SQLException {
         return false;
     }
 }
