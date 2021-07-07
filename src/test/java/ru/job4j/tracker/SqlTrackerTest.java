@@ -1,19 +1,14 @@
 package ru.job4j.tracker;
 
 import org.junit.*;
-import ru.job4j.tracker.Item;
 
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Properties;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertThat;
 
 public class SqlTrackerTest {
 
@@ -53,6 +48,49 @@ public class SqlTrackerTest {
         try (SqlTracker tracker = new SqlTracker(connection)) {
             tracker.add(new Item("itemName"));
             Assert.assertEquals(tracker.findByName("itemName").size(), 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void replaceItemTest() {
+        try (SqlTracker tracker = new SqlTracker(connection)) {
+            tracker.add(new Item("testItem"));
+            Item item = new Item("newItem");
+            int id = tracker.findByName("testItem").get(0).getId();
+            tracker.replace(id, item);
+            Assert.assertEquals(tracker.findByName("newItem").size(), 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void findByNameTest() {
+        try (SqlTracker tracker = new SqlTracker(connection)) {
+            tracker.add(new Item("testItem1"));
+            tracker.add(new Item("testItem2"));
+            tracker.add(new Item("testItem2"));
+            tracker.add(new Item("testItem3"));
+            tracker.add(new Item("testItem3"));
+            tracker.add(new Item("testItem3"));
+            Assert.assertEquals(tracker.findByName("testItem1").size(), 1);
+            Assert.assertEquals(tracker.findByName("testItem2").size(), 2);
+            Assert.assertEquals(tracker.findByName("testItem3").size(), 3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void deleteItemTest() throws SQLException {
+        try (SqlTracker tracker = new SqlTracker(connection)) {
+            tracker.add(new Item("testItem"));
+            int id = tracker.findByName("testItem").get(0).getId();
+            Assert.assertEquals(tracker.findById(id).getName(),"testItem");
+            tracker.delete(id);
+            Assert.assertEquals(tracker.findByName("testItem").size(), 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
